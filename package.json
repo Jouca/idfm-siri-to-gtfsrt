@@ -12,9 +12,15 @@
   "author": "",
   "license": "AGPL-3.0-only",
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "tsup": "^8.3.5"
   },
   "dependencies": {
-    "gtfs-types": "^4.0.0"
-  }
+    "gtfs-rt-bindings": "^4.6.0",
+    "gtfs-types": "^4.0.0",
+    "protobufjs": "^7.4.0"
+  },
+  "trustedDependencies": [
+    "protobufjs"
+  ]
 }

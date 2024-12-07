@@ -1,3 +1,7 @@
+import { GTFSRealtime } from "gtfs-types"
+
+// Siri Lite
+
 type EmptyObject = {}
 type StringValueInObject = {
     value: string
@@ -58,3 +62,36 @@ export interface EstimatedCalls {
 }
 
 
+export type OutputType<IsProtobuf extends boolean> = IsProtobuf extends true
+    ? Buffer<ArrayBuffer>
+    : GTFSRealtime;
+
+
+
+// GTFS
+
+export enum tripsGtfs {
+    routeId,
+    serviceId,
+    tripId,
+    tripHeadsign,
+    tripShortName,
+    directionId,
+    blockId,
+    shapeId,
+    wheelchairAccessible,
+    bikesAllowed
+}
+
+export enum stopTimesGtfs {
+    tripId,
+    arrivalTime,
+    departureTime,
+    stopId,
+    stopSequence,
+    pickupType,
+    dropOffType,
+    localZoneId,
+    stopHeadsign,
+    timepoint
+}
